@@ -4,11 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>
-        this is my site
-    </h1>
-    <p>mahid hasan</p>
+    <body>
+        <div id="login-area">
+            <h1 class="text-center">Wellcome to AM BANK</h1>
+             <div class="bubmit-area">
+                 <h4>Login</h4>
+                <input class="form-control" type="text" placeholder="fist name" >
+                <br>
+                <input class="form-control" type="password" placeholder="password" >
+                 <br>
+                 <button id="login" class="btn btn-primary">Enter</button>
+            </div>
+         </div>
+         <div id="transaction-area">
+             <div class="row">
+                 <div class="col-md-4">
+                <div class="deposite status">
+                    <h4>Deposite</h4>
+                    <h2>$00</h2>
+                </div>
+                 </div>
+                 <div class="col-md-4">
+                    <div class="widthdraw status">
+                        <h4>Withdraw</h4>
+                        <h2>$00</h2>
+                    </div>
+                 </div>
+                 <div class="col-md-4">
+                     <div class="balance status">
+                        <h4>Balance</h4>
+                        <h2>$00</h2>
+                     </div>
+                 </div>
+             </div>
+             <div class="row">
+                 <div class="col-md-6">
+                   <div class="bank">
+                    <h2>Deposite</h2>
+                    <input class="form-control" type="text" placeholder="$ Amount you want to deposite" >
+                    <br>
+                    <button class="btn btn-success">Deposite</button>
+                    </div>
+                  </div>
+                 <div class="col-md-6">
+             <div class="bank">
+                  <h2>widthdraw</h2>
+                 <input class="form-control" type="text" placeholder="$ Amount you want to widthdraw" >
+                 <br>
+                 <button class="btn btn-success">widthdraw</button>
+             </div>
+        </div>
+     </div>
+ </div>
+
+    <script>
+        const loginBtn = document.getElementById("login");
+        loginBtn.addEventListener("click", function(){
+        const loginArea = document.getElementById("login-area");
+        loginArea.style.display = "none";
+        const transactionArea = document.getElementById("transaction-area");
+        transactionArea.style.display= "block";
+
+        })
+    </script>
 </body>
 </html>
