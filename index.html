@@ -24,7 +24,7 @@
        <div class="col-md-4">
            <div class="deposit">
                <h5>Deposit</h5>
-               <h2>$ <span id="currentDeposit"></span> </h2>
+               <h2>$ <span id="currentDeposit">00</span> </h2>
            </div>
        </div>
        <div class="col-md-4">
@@ -45,7 +45,7 @@
           <div class="submit-area">
             <h5>Deposit</h5>
             <input id="depositAmount" class="form-control" type="text" placeholder="$ want to you deposit"><br>
-            <button id="addDoposit" class="btn btn-dark">deposit</button>
+            <button id="addDeposit" class="btn btn-dark">deposit</button>
           </div>
        </div>
        <div class="col-md-6">
@@ -69,16 +69,20 @@
         transacitoinArea.style.display = "block";
         })
         //deposit button handlaer
-        const depositBtn = document.getElementById("addDoposit");
+        const depositBtn = document.getElementById("addDeposit");
         depositBtn.addEventListener("click", function(){
-        const depositAmount = document.getElementById("depositAmount").value;
+        const depositAmount = document.getElementById("depositAmount").nodeValue;
         const depositNumber = parseFloat(depositAmount);
+        
+        const currentDeposit = document.getElementById("currentDeposit").innerText;
+        const currentDepositNumber = parseFloat(currentDeposit);
+        const totalDeposti = depositNumber + currentDepositNumber;
+        console.log(totalDeposti);
 
-            const currentDeposit = document.getElementById("currentDeposit").innerText;
-            currentDepositNumber = parseFloat(currentDeposit);
-            const totalDeposit = currentDeposit + currentDepositNumber;
-            console.log(totalDeposit);
+
         })
-    </script>
+
+
+</script>
 </body>
 </html>
