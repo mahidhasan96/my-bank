@@ -30,7 +30,7 @@
        <div class="col-md-4">
            <div class="widthdraw">
                <h5>Widthdraw</h5>
-               <h2>$ <span id="withdrawAmount">00</span> </h2>
+               <h2>$ <span id="currentWithdraw">00</span></h2>
            </div>
        </div>
        <div class="col-md-4">
@@ -70,21 +70,32 @@
         })
 
         //widthdraw button handalwer
+        const withDrawBtn = document.getElementById("addwithdraw");
+        withDrawBtn.addEventListener("click", function(){
+        const withdrawNumber = getInputNumber("withdrawAmount");
+        updateSpanText("currentWithdraw", withdrawNumber);
+        updateSpanText("currentBalance", -1* withdrawNumber);
+        document.getElementById("withdrawAmount").value = "";   
 
+        })
+    
+        function getInputNumber(id){
+        const amount = document.getElementById(id).value;
+        const amountNumber = parseFloat(amount);
+        return amountNumber;
 
+        }
         //deposit button handlaer
         const depositBtn = document.getElementById("addDeposit");
         depositBtn.addEventListener("click", function(){
-        const depositAmount = document.getElementById("depositAmount").value;
-        const depositNumber = parseFloat(depositAmount);
+        const depositNumber = getInputNumber("depositAmount");
 
-        
         updateSpanText("currentDeposit", depositNumber);
        updateSpanText("currentBalance", depositNumber);
       
 
         document.getElementById("depositAmount").value = "";
-
+       
         })
         function updateSpanText(id, depositNumber){
         const current = document.getElementById(id).innerText;
